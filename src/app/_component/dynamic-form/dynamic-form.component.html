@@ -1,0 +1,8 @@
+<div class="form-group" *ngFor="let menu of data.menus; let i = index">
+    <h3>{{ menuGroupTitles[i] }}</h3>
+    <label *ngFor="let item of menu">
+      <input type="radio" [name]="'menu-group-' + i" [(ngModel)]="selectedOptions[i]" [value]="item.id"> {{ item.value }}
+    </label>
+  </div>
+  
+  <button type="submit" [disabled]="!isFormValid()" (click)="submitForm()">Submit</button>
